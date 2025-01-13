@@ -1,59 +1,81 @@
-# Shadcn/UI Landing Page Template
+# React Landing Page Template
 
-## <a href="https://ui.shadcn.com/" target="_blank">ShadcnUI</a> + <a href="https://react.dev/" target="_blank">React</a> + <a href="https://www.typescriptlang.org/" target="_blank">TypeScript</a> + <a href="https://tailwindcss.com/" target="_blank">Tailwind</a>.
+Welcome to the React Landing Page Template! This project is a modern, customizable, and responsive landing page built with React.
 
-![shadch-landing-page](https://github.com/leoMirandaa/shadcn-landing-page/assets/61714687/3ba7b51f-9589-4541-800a-5ab7cecad1b5)
-
-Build your React landing page effortlessly with the required sections to your project. <a href="https://shadcn-landing-page.vercel.app/" target="_blank">Live Demo</a>
-
-## Sections
-
-- [x] Navbar
-- [x] Sidebar(mobile)
-- [x] Hero
-- [x] Sponsors
-- [x] About
-- [x] Stats
-- [x] How It Works
-- [x] Features
-- [x] Services
-- [x] Call-to-Action (CTA)
-- [x] Testimonials
-- [x] Team
-- [x] Pricing
-- [x] Newsletter
-- [x] Frequently Asked Questions(FAQ)
-- [x] Footer
+---
 
 ## Features
 
-- [x] Fully Responsive Design
-- [x] User Friendly Navigation
-- [x] Dark Mode
-- [x] Meta tags
+- Fully responsive design
+- Easy-to-edit components
+- Built with React and modern tools
+- Clean and reusable code structure
 
-## How to install
+---
 
-1. Clone this repository:
+## Getting Started
 
-```bash
-git clone https://github.com/leoMirandaa/shadcn-landing-page.git
-```
+Follow these steps to set up and run the project locally:
 
-2. Go into project
+### Prerequisites
+- Node.js (v14 or higher)
+- npm (v6 or higher)
 
-```bash
-cd shadcn-landing-page
-```
+### Installation
+1. Clone the repository: `git clone https://github.com/Gptsub333/Template_4.git`
+2. Navigate to the project directory: `cd React-Landing-Page-Template`
+3. Install dependencies: `npm install`
 
-3. Install dependencies
+### Running the Development Server
+Start the development server: `npm start`
 
-```bash
-npm install
-```
+The app will be available at [http://localhost:3000](http://localhost:3000).
 
-4. Run project
+### Building for Production
+To create an optimized build for production: `npm run build`
 
-```bash
-npm run dev
-```
+The production-ready files will be in the `build/` directory.
+
+
+
+---
+
+
+## Screenshots
+
+![alt text](<public/assets/Screenshot 2025-01-13 112714.png>)
+
+![alt text](<public/assets/Screenshot 2025-01-13 112851.png>)
+
+![alt text](<public/assets/Screenshot 2025-01-13 112915.png>)
+
+![alt text](<public/assets/Screenshot 2025-01-13 112929.png>)
+
+![alt text](<public/assets/Screenshot 2025-01-13 112943.png>)
+
+![alt text](<public/assets/Screenshot 2025-01-13 112956.png>)
+
+![alt text](<public/assets/Screenshot 2025-01-13 113039.png>)
+
+![alt text](<public/assets/Screenshot 2025-01-13 113107.png>)
+
+### Example Section
+
+
+---
+
+## License
+
+This project is licensed under the MIT License. Feel free to use, modify, and share it.
+
+---
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a pull request or create an issue.
+
+---
+
+## Contact
+
+For any inquiries or support, please reach out to sales.queries@holbox.ai .
