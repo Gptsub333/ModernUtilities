@@ -1,5 +1,5 @@
 import { Lightbulb } from "lucide-react";
-import { LogoIcon } from "./Icons";
+
 
 export const Footer = () => {
   return (

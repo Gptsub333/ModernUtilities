@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -15,7 +15,7 @@ import {
 import { buttonVariants } from "./ui/button";
 import { Lightbulb, Menu } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
-import { LogoIcon } from "./Icons";
+
 
 interface RouteProps {
   href: string;
@@ -45,7 +45,7 @@ export const Navbar = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
 
   // Reference to the footer
-  const footerRef = useRef<HTMLElement | null>(null);
+  // const footerRef = useRef<HTMLElement | null>(null);
 
   // Scroll to footer when clicking "Contact Us"
   const scrollToFooter = () => {
