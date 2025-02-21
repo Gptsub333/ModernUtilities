@@ -8,29 +8,29 @@ interface FeatureProps {
 }
 
 const features: FeatureProps[] = [
-  {
-    icon: <MedalIcon />,
-    title: "Accessibility",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quas provident cum",
-  },
-  {
-    icon: <MapIcon />,
-    title: "Community",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quas provident cum",
-  },
+  // {
+  //   icon: <MedalIcon />,
+  //   title: "Accessibility",
+  //   description:
+  //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quas provident cum",
+  // },
+  // {
+  //   icon: <MapIcon />,
+  //   title: "Community",
+  //   description:
+  //     "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quas provident cum",
+  // },
   {
     icon: <PlaneIcon />,
-    title: "Scalability",
+    title: "Smart Solutions",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quas provident cum",
+      "Empowering communities with cutting-edge technology and reliable utility services, Modern Utilities is committed to enhancing everyday life through seamless connectivity and smart innovations.",
   },
   {
     icon: <GiftIcon />,
-    title: "Gamification",
+    title: "Sustainable Practices",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum quas provident cum",
+      "At Modern Utilities, we are committed to eco-friendly solutions that not only enhance your daily life but also contribute to a greener future. By investing in renewable energy sources, we strive to create a cleaner, more sustainable world.",
   },
 ];
 
@@ -41,18 +41,17 @@ export const HowItWorks = () => {
       className="container text-center py-24 sm:py-32"
     >
       <h2 className="text-3xl md:text-4xl font-bold ">
-        How It{" "}
+        
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          Works{" "}
+          Transforming Utilities{" "}
         </span>
-        Step-by-Step Guide
+        for a Modern World
       </h2>
       <p className="md:w-3/4 mx-auto mt-4 mb-8 text-xl text-muted-foreground">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veritatis
-        dolor pariatur sit!
+      At Modern Utilities, we specialize in innovative solutions that enhance your daily life. Our commitment to sustainability and efficiency sets us apart in the utility sector.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
         {features.map(({ icon, title, description }: FeatureProps) => (
           <Card
             key={title}

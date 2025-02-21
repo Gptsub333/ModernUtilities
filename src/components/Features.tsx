@@ -1,4 +1,4 @@
-import { Badge } from "./ui/badge";
+// import { Badge } from "./ui/badge";
 import {
   Card,
   CardContent,
@@ -6,34 +6,62 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import image from "../assets/growth.png";
-import image3 from "../assets/reflecting.png";
-import image4 from "../assets/looking-ahead.png";
+import { MobileIcon } from "@radix-ui/react-icons";
+// import image from "../assets/growth.png";
+// import image3 from "../assets/reflecting.png";
+// import image4 from "../assets/looking-ahead.png";
+import { Cable, Home, PhoneCall, PhoneIcon, PhoneIncomingIcon, Tv, Wifi } from "lucide-react";
+
 
 interface FeatureProps {
   title: string;
   description: string;
-  image: string;
+  price: string;
+  icon:JSX.Element;
 }
 
 const features: FeatureProps[] = [
   {
-    title: "Responsive Design",
+    icon: <Wifi/>,
+    title: "Internet",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    image: image4,
+      "High-speed fiber optic internet for seamless connectivity.",
+    price: "Fast connections from $39.99/month",
   },
   {
-    title: "Intuitive user interface",
+    icon: <MobileIcon/>,
+    title: "Mobile",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    image: image3,
+      "Flexible mobile plans with nationwide coverage.",
+    price: "Plans starting at $19.99/month",
   },
   {
-    title: "AI-Powered insights",
+    icon: <PhoneCall/>,
+    title: "Landline",
     description:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    image: image,
+      "Crystal-clear landline service for reliable communication.",
+    price: "Affordable rates starting at $9.99/month",
+  },
+  {
+    icon: <Tv/>,
+    title: "TV",
+    description:
+      "Access to a wide range of channels and on-demand content.",
+    price: "Plans from $29.99/month",
+  },
+  {
+    icon: <Cable/>,
+    title: "Cable TV",
+    description:
+      "Premium cable TV packages with HD quality.",
+    price: "Packages starting at $49.99/month",
+  },
+  {
+    icon: <Home/>,
+    title: "Smart Home Services",
+    description:
+      "Enhance your home with smart devices and automation.",
+    price: "Solutions from $59.99/month",
   },
 ];
 
@@ -58,39 +86,29 @@ export const Features = () => {
       <h2 className="text-3xl lg:text-4xl font-bold md:text-center">
         Many{" "}
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-          Great Features
+          Great Services
         </span>
       </h2>
 
-      <div className="flex flex-wrap md:justify-center gap-4">
-        {featureList.map((feature: string) => (
-          <div key={feature}>
-            <Badge
-              variant="secondary"
-              className="text-sm"
-            >
-              {feature}
-            </Badge>
-          </div>
-        ))}
-      </div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {features.map(({ title, description, image }: FeatureProps) => (
+        {features.map(({ title, description, price, icon }: FeatureProps) => (
           <Card key={title}>
-            <CardHeader>
-              <CardTitle>{title}</CardTitle>
+            <CardHeader className="flex flex-col items-center text-center">
+            <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 text-black">
+              {icon}
+              </div>
             </CardHeader>
+            <CardContent className="flex items-center justify-center" >
+              <CardTitle>{title}</CardTitle>
+            </CardContent>
 
             <CardContent>{description}</CardContent>
 
-            <CardFooter>
-              <img
-                src={image}
-                alt="About feature"
-                className="w-[200px] lg:w-[300px] mx-auto"
-              />
+            <CardFooter className="flex items-center justify-center bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
+              {price}
             </CardFooter>
+
           </Card>
         ))}
       </div>
