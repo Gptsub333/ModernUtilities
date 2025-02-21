@@ -13,7 +13,7 @@ import {
 } from "@/components/ui/sheet";
 
 import { buttonVariants } from "./ui/button";
-import { Menu } from "lucide-react";
+import { Lightbulb, Menu } from "lucide-react";
 import { ModeToggle } from "./mode-toggle";
 import { LogoIcon } from "./Icons";
 
@@ -23,6 +23,10 @@ interface RouteProps {
 }
 
 const routeList: RouteProps[] = [
+  {
+    href: "#about",
+    label: "About",
+  },
   {
     href: "#features",
     label: "Features",
@@ -45,7 +49,7 @@ export const Navbar = () => {
 
   // Scroll to footer when clicking "Contact Us"
   const scrollToFooter = () => {
-    const footer = document.getElementById("footer");
+    const footer = document.getElementById("contactus");
     if (footer) {
       footer.scrollIntoView({ behavior: "smooth" });
     }
@@ -61,7 +65,7 @@ export const Navbar = () => {
               href="/"
               className="ml-2 font-bold text-xl flex"
             >
-              <LogoIcon />
+              <Lightbulb className="mx-2" />
               Modern Utilities
             </a>
           </NavigationMenuItem>

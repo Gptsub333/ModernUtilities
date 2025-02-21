@@ -1,7 +1,7 @@
 import { Button } from "./ui/button";
 import { buttonVariants } from "./ui/button";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
-import pilot from "../assets/modernu.jpg"
+import pilot from "../assets/modernu.jpg";
 
 export const Hero = () => {
   return (

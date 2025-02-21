@@ -6,6 +6,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import user1 from '../assets/user1.jpeg'
+import user2 from '../assets/user2.jpeg'
+import user3 from '../assets/user3.jpeg'
+import user4 from '../assets/user4.jpeg'
+import user5 from '../assets/user5.jpeg'
+import user6 from '../assets/user6.jpeg'
+import user7 from '../assets/user7.jpeg'
+import user8 from '../assets/user8.jpeg'
+import user9 from '../assets/user9.jpeg'
 
 interface TestimonialProps {
   image: string;
@@ -16,46 +25,67 @@ interface TestimonialProps {
 
 const testimonials: TestimonialProps[] = [
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe",
-    comment: "This landing page is awesome!",
+    image: user1,
+    name: "Brite Ang3l",
+    userName: "customer",
+    comment: "Best place in Las Vegas to get Internet phone or cable TV service. I highly recommend speaking with Milan or Tom. Veteran owned and operated small business so I love supporting our soldiers.",
   },
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe1",
+    image: user2,
+    name: "preston howard",
+    userName: "customer",
     comment:
-      "Lorem ipsum dolor sit amet,empor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.",
+      "Milan is a great employee and very helpful. He was able to assist me and everything that I needed. Also the lady that also assisted was an amazing service provider. I think you guys so much and I recommend a lot of people go to the service.",
   },
 
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe2",
+    image: user3,
+    name: "Harland Lee",
+    userName: "customer",
     comment:
-      "Lorem ipsum dolor sit amet,exercitation. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+      "These guys are the best in the business, I promise you. They have ALL providers at the same location. Ask for Milan or Thom. They have been in the business since internet was invented. They know so much, it is unreal.",
   },
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe3",
+    image: user4,
+    name: "tae wells",
+    userName: "customer",
     comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.",
+      "Milan is the Best he’s the 3Cs and the 3Ts cool, calm, collective and on time, task, and target he gets the job done. I never really experienced GREAT CUSTOMER SERVICE until I met him. I highly recommend.",
   },
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe4",
+    image: user5,
+    name: "Albert Avila",
+    userName: "customer",
     comment:
-      "Lorem ipsum dolor sit amet, tempor incididunt  aliqua. Ut enim ad minim veniam, quis nostrud.",
+      "Modern Utilities is where you want to bring your business to, nothing but professionalism and dedication coming from Milan. I brought my questions and concerns to him hoping that I receive the service we as consumers deserve.",
   },
   {
-    image: "https://github.com/shadcn.png",
-    name: "John Doe React",
-    userName: "@john_Doe5",
+    image: user6,
+    name: "S C",
+    userName: "customer",
     comment:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+      "Milan is amazing! He did an excellent job explaining everything with my elderly mother who is not savvy with technology. I would not hesitate to recommend this place to anyone.",
+  },
+  {
+    image: user7,
+    name: "Ryn",
+    userName: "customer",
+    comment:
+      "Milan was awesome, I had a situation and he had me taken care of and on my way in a matter of minutes, and the modem I got worked perfectly. I will go through him for now on for all my CenturyLink needs and issues. Thank you so much.",
+  },
+  {
+    image: user8,
+    name: "Scotavo Agostino",
+    userName: "customer",
+    comment:
+      "I lost my internet service due to a thunderstorm. I called Modern Utilities and they were very helpful, especially Milan. I was up and running with a new system in no time. The customer service was excellent. Milan definitely went the extra miles. Thanks for being so helpful.",
+  },
+  {
+    image: user9,
+    name: "Marcos Delucas",
+    userName: "customer",
+    comment:
+      "I live in Maryland and needed a solution for internet service for my home and my business. I know this company is based in Las Vegas Nevada but they are licensed in all 50 states. I saw one of his YouTube videos and I was inclined.",
   },
 ];
 
@@ -71,12 +101,11 @@ export const Testimonials = () => {
           {" "}
           People Love{" "}
         </span>
-        This Landing Page
+        Us
       </h2>
 
       <p className="text-xl text-muted-foreground pt-4 pb-8">
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non unde error
-        facere hic reiciendis illo
+        Here's the what people say about us
       </p>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-4 sm:block columns-2  lg:columns-3 lg:gap-6 mx-auto space-y-4 lg:space-y-6">

@@ -13,6 +13,7 @@ import { Services } from "./components/Services";
 // import { Sponsors } from "./components/Sponsors";
 import { Team } from "./components/Team";
 import { Testimonials } from "./components/Testimonials";
+import Contactus from "./components/Contactus"
 import "./App.css";
 
 function App() {
@@ -24,13 +25,14 @@ function App() {
       <About />
       <HowItWorks />
       <Features />
-      <Services />
-      <Cta />
+      {/* <Services /> */}
+      {/* <Cta /> */}
       <Testimonials />
-      <Team />
-      <Pricing />
+      {/* <Team /> */}
+      {/* <Pricing /> */}
       <Newsletter />
       <FAQ />
+      <Contactus/>
       <Footer />
       <ScrollToTop />
     </>

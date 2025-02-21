@@ -1,3 +1,4 @@
+import { Lightbulb } from "lucide-react";
 import { LogoIcon } from "./Icons";
 
 export const Footer = () => {
@@ -12,53 +13,31 @@ export const Footer = () => {
             href="/"
             className="font-bold text-xl flex"
           >
-            <LogoIcon />
-            ShadcnUI/React
+            <Lightbulb className="mx-2" />
+            Modern Utilities
           </a>
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Follow US</h3>
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Github
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Twitter
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Dribbble
-            </a>
+          <h3 className="font-bold text-lg">Address</h3>
+          <div className="opacity-60 hover:opacity-100">
+            
+              3441 W Sahara Ave b7
+              2Las Vegas, NV 89102
+              United States
+            
           </div>
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Platforms</h3>
+          <h3 className="font-bold text-lg">Support</h3>
           <div>
             <a
               rel="noreferrer noopener"
               href="#"
               className="opacity-60 hover:opacity-100"
             >
-              Web
+              Support Center
             </a>
           </div>
 
@@ -68,17 +47,7 @@ export const Footer = () => {
               href="#"
               className="opacity-60 hover:opacity-100"
             >
-              Mobile
-            </a>
-          </div>
-
-          <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
-            >
-              Desktop
+              Customer Support
             </a>
           </div>
         </div>
@@ -88,7 +57,7 @@ export const Footer = () => {
           <div>
             <a
               rel="noreferrer noopener"
-              href="#"
+              href="#features"
               className="opacity-60 hover:opacity-100"
             >
               Features
@@ -98,17 +67,17 @@ export const Footer = () => {
           <div>
             <a
               rel="noreferrer noopener"
-              href="#"
+              href="#testimonials"
               className="opacity-60 hover:opacity-100"
             >
-              Pricing
+              Testimonials
             </a>
           </div>
 
           <div>
             <a
               rel="noreferrer noopener"
-              href="#"
+              href="#faq"
               className="opacity-60 hover:opacity-100"
             >
               FAQ
@@ -152,15 +121,8 @@ export const Footer = () => {
 
       <section className="container pb-14 text-center">
         <h3>
-          &copy; 2024 Landing page made by{" "}
-          <a
-            rel="noreferrer noopener"
-            target="_blank"
-            href="https://www.linkedin.com/in/leopoldo-miranda/"
-            className="text-primary transition-all border-primary hover:border-b-2"
-          >
-            Leo Miranda
-          </a>
+          &copy; 2025 Modern Utilities. All rights reserved.{" "}
+          
         </h3>
       </section>
     </footer>

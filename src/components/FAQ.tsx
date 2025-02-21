@@ -13,34 +13,48 @@ interface FAQProps {
 
 const FAQList: FAQProps[] = [
   {
-    question: "Is this template free?",
-    answer: "Yes. It is a free ChadcnUI template.",
+    question: "What internet plans do you offer, and how much do they cost?",
+    answer: "We offer high-speed fiber optic internet with fast and reliable connections. Plans start at $39.99 per month.",
     value: "item-1",
   },
   {
-    question: "Lorem ipsum dolor sit amet consectetur adipisicing elit?",
+    question: "Do you provide mobile services with nationwide coverage?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+      "Yes! Our flexible mobile plans come with nationwide coverage, starting at $19.99 per month.",
     value: "item-2",
   },
   {
     question:
-      "Lorem ipsum dolor sit amet  Consectetur natus dolores minus quibusdam?",
+      "Is there an option for landline service, and what are the charges?",
     answer:
-      "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Labore qui nostrum reiciendis veritatis necessitatibus maxime quis ipsa vitae cumque quo?",
+      "Absolutely! Our landline service provides crystal-clear call quality, with rates starting at $9.99 per month.",
     value: "item-3",
   },
   {
-    question: "Lorem ipsum dolor sit amet, consectetur adipisicing elit?",
-    answer: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+    question: "What TV services do you provide?",
+    answer: "We offer a variety of TV plans, including basic TV packages starting at $29.99 per month and premium cable TV packages with HD quality from $49.99 per month.",
     value: "item-4",
   },
   {
     question:
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur natus?",
+      "Do you offer smart home services, and what do they include?",
     answer:
-      "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint labore quidem quam? Consectetur sapiente iste rerum reiciendis animi nihil nostrum sit quo, modi quod.",
+      "Yes! Our smart home services include home automation and smart devices to enhance your living experience. Plans start at $59.99 per month.",
     value: "item-5",
+  },
+  {
+    question:
+      "Can I bundle multiple services for a better deal?",
+    answer:
+      "Yes! We offer bundle discounts when you combine internet, mobile, TV, or smart home services. Contact us for customized bundle options.",
+    value: "item-6",
+  },
+  {
+    question:
+      "How can I check if Modern Utilities is available in my area?",
+    answer:
+      "You can DM us or call 702-850-6149 to check service availability in your location.",
+    value: "item-7",
   },
 ];
 

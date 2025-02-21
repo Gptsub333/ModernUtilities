@@ -10,7 +10,7 @@ import { MobileIcon } from "@radix-ui/react-icons";
 // import image from "../assets/growth.png";
 // import image3 from "../assets/reflecting.png";
 // import image4 from "../assets/looking-ahead.png";
-import { Cable, Home, PhoneCall, PhoneIcon, PhoneIncomingIcon, Tv, Wifi } from "lucide-react";
+import { Cable, Home, PhoneCall, Smartphone, Tv, Wifi } from "lucide-react";
 
 
 interface FeatureProps {
@@ -29,7 +29,7 @@ const features: FeatureProps[] = [
     price: "Fast connections from $39.99/month",
   },
   {
-    icon: <MobileIcon/>,
+    icon: <Smartphone/>,
     title: "Mobile",
     description:
       "Flexible mobile plans with nationwide coverage.",
@@ -88,6 +88,9 @@ export const Features = () => {
         <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
           Great Services
         </span>
+        <p className="md:w-3/4 mx-auto mt-4 mb-8 text-xl text-muted-foreground">
+        Your one-stop shop for internet, moblie/landline service, and TV! For more info about service in your area, DM us or call 702-850-6149...We offer a wide range of utility services to make your move to a new home seamless and stress-free.
+      </p>
       </h2>
 
 
@@ -103,7 +106,9 @@ export const Features = () => {
               <CardTitle>{title}</CardTitle>
             </CardContent>
 
-            <CardContent>{description}</CardContent>
+            <CardContent className="text-center flex flex-col items-center justify-center">
+              {description}
+            </CardContent>
 
             <CardFooter className="flex items-center justify-center bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
               {price}
