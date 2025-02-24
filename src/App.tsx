@@ -7,10 +7,12 @@ import { Hero } from "./components/Hero";
 import { HowItWorks } from "./components/HowItWorks";
 import { Navbar } from "./components/Navbar";
 import { Newsletter } from "./components/Newsletter";
+import { Services } from "./components/Services";
 
 import { ScrollToTop } from "./components/ScrollToTop";
 
 // import { Sponsors } from "./components/Sponsors";
+import { Workflow } from "./components/Workflow";
 
 import { Testimonials } from "./components/Testimonials";
 import Contactus from "./components/Contactus"
@@ -25,7 +27,7 @@ function App() {
       <About />
       <HowItWorks />
       <Features />
-      {/* <Services /> */}
+      <Workflow />
       {/* <Cta /> */}
       <Testimonials />
       {/* <Team /> */}

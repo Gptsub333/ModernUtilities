@@ -22,8 +22,8 @@ export default function Contactus() {
   }
 
   return (
-    <section id="contactus" className="container">
-      <div className="w-full min-h-screen flex justify-center">
+    <section id="contactus" className="container py-24 sm:py-32 space-y-8">
+      <div className="w-full  flex justify-center">
         <div className="w-full max-w-3xl space-y-10"> {/* Increased width here */}
           <div className="text-center space-y-2">
             <h2 className="text-3xl lg:text-4xl font-bold md:text-center">

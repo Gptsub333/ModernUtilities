@@ -53,6 +53,20 @@ const testimonials: TestimonialProps[] = [
       "Milan is the Best he’s the 3Cs and the 3Ts cool, calm, collective and on time, task, and target he gets the job done. I never really experienced GREAT CUSTOMER SERVICE until I met him. I highly recommend.",
   },
   {
+    image: user8,
+    name: "Scotavo Agostino",
+    userName: "customer",
+    comment:
+      "I lost my internet service due to a thunderstorm. I called Modern Utilities and they were very helpful, especially Milan. I was up and running with a new system in no time. The customer service was excellent. Milan definitely went the extra miles. Thanks for being so helpful.",
+  },
+  {
+    image: user9,
+    name: "Marcos Delucas",
+    userName: "customer",
+    comment:
+      "I live in Maryland and needed a solution for internet service for my home and my business. I know this company is based in Las Vegas Nevada but they are licensed in all 50 states. I saw one of his YouTube videos and I was inclined.",
+  },
+  {
     image: user5,
     name: "Albert Avila",
     userName: "customer",
@@ -72,20 +86,6 @@ const testimonials: TestimonialProps[] = [
     userName: "customer",
     comment:
       "Milan was awesome, I had a situation and he had me taken care of and on my way in a matter of minutes, and the modem I got worked perfectly. I will go through him for now on for all my CenturyLink needs and issues. Thank you so much.",
-  },
-  {
-    image: user8,
-    name: "Scotavo Agostino",
-    userName: "customer",
-    comment:
-      "I lost my internet service due to a thunderstorm. I called Modern Utilities and they were very helpful, especially Milan. I was up and running with a new system in no time. The customer service was excellent. Milan definitely went the extra miles. Thanks for being so helpful.",
-  },
-  {
-    image: user9,
-    name: "Marcos Delucas",
-    userName: "customer",
-    comment:
-      "I live in Maryland and needed a solution for internet service for my home and my business. I know this company is based in Las Vegas Nevada but they are licensed in all 50 states. I saw one of his YouTube videos and I was inclined.",
   },
 ];
 
