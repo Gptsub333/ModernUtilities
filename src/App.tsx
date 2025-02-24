@@ -25,9 +25,9 @@ function App() {
       <Hero />
       {/* <Sponsors /> */}
       <About />
+      <Workflow />
       <HowItWorks />
       <Features />
-      <Workflow />
       {/* <Cta /> */}
       <Testimonials />
       {/* <Team /> */}
