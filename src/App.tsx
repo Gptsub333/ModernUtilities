@@ -7,7 +7,7 @@ import { Hero } from "./components/Hero";
 import { HowItWorks } from "./components/HowItWorks";
 import { Navbar } from "./components/Navbar";
 import { Newsletter } from "./components/Newsletter";
-import { Services } from "./components/Services";
+// import { Services } from "./components/Services";
 
 import { ScrollToTop } from "./components/ScrollToTop";
 
