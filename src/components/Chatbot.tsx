@@ -20,7 +20,7 @@ const Chatbot: React.FC = () => {
     const [sessionId, setSessionId] = useState<string>(localStorage.getItem("sessionId") || "");
     const [chat, setChat] = useState<ChatMessage[]>(
         JSON.parse(localStorage.getItem("chat") || "[]") || [
-            { sender: "bot", message: "Hello this is Modern Utilities, who do I have the pleasure of chatting with ?" },
+            { sender: "bot", message: "" },
         ]
     );
     const [message, setMessage] = useState<string>("");
@@ -81,7 +81,7 @@ const Chatbot: React.FC = () => {
         localStorage.removeItem("sessionId");
         localStorage.removeItem("chat");
         setSessionId("");
-        setChat([{ sender: "bot", message: "Hello this is Modern Utilities, who do I have the pleasure of chatting with ?" }]);
+        setChat([]);
         setReceivedMessages(new Set());
     };
 
@@ -129,7 +129,35 @@ const Chatbot: React.FC = () => {
                         </div>
 
                         {/* Messages area */}
+                        {/* <div className="flex-1 flex flex-col space-y-2 p-2 sm:p-3 overflow-y-auto">
+                            {chat.map((msg, i) => (
+                                <motion.div
+                                    key={i}
+                                    initial={{ opacity: 0, x: msg.sender === "user" ? 50 : -50 }}
+                                    animate={{ opacity: 1, x: 0 }}
+                                    transition={{ duration: 0.3, ease: "easeOut" }}
+                                    className={`px-2 sm:px-3 py-1 sm:py-2 max-w-[85%] rounded-md text-xs sm:text-sm break-words ${getMessageClasses(msg.sender)}`}
+                                >
+                                    {msg.message}
+                                </motion.div>
+                            ))}
+                            <div ref={chatEndRef} />
+                        </div> */}
+                        {/* Messages area */}
                         <div className="flex-1 flex flex-col space-y-2 p-2 sm:p-3 overflow-y-auto">
+                            {/* Only show hardcoded greeting if it's not already in chat */}
+                            {!chat.some(msg => msg.message === "Hello! This is Modern Utilities. Who do I have the pleasure of chatting with?") && (
+                                <motion.div
+                                    initial={{ opacity: 0, y: -10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.5, ease: "easeOut" }}
+                                    className="px-2 sm:px-3 py-1 sm:py-2 max-w-[85%] rounded-md text-xs sm:text-sm break-words bg-gray-700 text-white self-start"
+                                >
+                                    Hello! This is Modern Utilities. Who do I have the pleasure of chatting with?
+                                </motion.div>
+                            )}
+
+                            {/* Render chat messages */}
                             {chat.map((msg, i) => (
                                 <motion.div
                                     key={i}
@@ -143,6 +171,7 @@ const Chatbot: React.FC = () => {
                             ))}
                             <div ref={chatEndRef} />
                         </div>
+
 
                         {/* Input and Clear Chat Row */}
                         <div className="border-t border-gray-700 bg-gray-900 p-2 flex items-center space-x-1 sm:space-x-2">
