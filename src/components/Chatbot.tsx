@@ -10,7 +10,10 @@ interface ChatMessage {
     message: string;
 }
 
-const B_url: string = import.meta.env.VITE_URL || "http://localhost:5000";
+const B_url: string = import.meta.env.VITE_URL;
+
+console.log("Backend url: ", B_url)
+
 const socket: Socket = io(B_url);
 
 const Chatbot: React.FC = () => {
