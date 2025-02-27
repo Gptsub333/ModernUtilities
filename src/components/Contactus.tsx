@@ -30,7 +30,7 @@ export default function Contactus() {
     const publicKey = import.meta.env.VITE_PUBLIC_KEY || '';
 
 
-    console.log("environment variables: ", serviceId, templateId, publicKey)
+    
   
     const templateParams = {
       message: formData.message,

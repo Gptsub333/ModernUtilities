@@ -12,7 +12,7 @@ interface ChatMessage {
 
 const B_url: string = import.meta.env.VITE_URL;
 
-console.log("Backend url: ", B_url)
+
 
 const socket: Socket = io(B_url);
 
