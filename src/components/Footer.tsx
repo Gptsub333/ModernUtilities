@@ -20,9 +20,8 @@ export const Footer = () => {
             {/* <h3 className="font-semi-bold text-lg">Address</h3> */}
             <div className="opacity-60 hover:opacity-100">
 
-              3441 W Sahara Ave b72 Las Vegas,
-              <br/> NV 89102
-              United States
+              Downtown Summerlin <br/>
+              Las Vegas, NV
 
             </div>
           </div>

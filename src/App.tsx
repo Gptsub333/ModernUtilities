@@ -9,7 +9,7 @@ import { Navbar } from "./components/Navbar";
 import { Newsletter } from "./components/Newsletter";
 // import { Services } from "./components/Services";
 
-import { ScrollToTop } from "./components/ScrollToTop";
+// import { ScrollToTop } from "./components/ScrollToTop";
 
 // import { Sponsors } from "./components/Sponsors";
 import { Workflow } from "./components/Workflow";
@@ -38,7 +38,7 @@ function App() {
       <FAQ />
       <Contactus/>
       <Footer />
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
     </>
   );
 }
