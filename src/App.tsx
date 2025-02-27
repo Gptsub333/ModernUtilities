@@ -17,10 +17,12 @@ import { Workflow } from "./components/Workflow";
 import { Testimonials } from "./components/Testimonials";
 import Contactus from "./components/Contactus"
 import "./App.css";
+import Chatbot from "./components/Chatbot";
 
 function App() {
   return (
     <>
+      <Chatbot/>
       <Navbar />
       <Hero />
       {/* <Sponsors /> */}
