@@ -56,9 +56,7 @@ export const Workflow = () => {
           Modern Utilities
         </span>?</h2>
       <p className="text-gray-400">
-        In a crowded market, Modern Utilities stands out as a trusted partner for your utility needs. Unlike
-        corporate call centers, our team offers personalized expertise, flawless English communication, and a deep
-        understanding of the process. This ensures a seamless and comforting experience for our customers.
+      Partner with a trusted multi-carrier provider that delivers honest solutions while keeping your costs low. As subject matter experts, we take a common-sense, customer-friendly approach to finding the best options for you. Stop wasting time navigating endless automated systems, long hold times, and outsourced agents who don’t truly understand your needs. Instead, work with a local expert who speaks your language fluently, has decades of top-tier experience, and is backed by the Department of Veterans Affairs. Let us handle the hassle so you can enjoy reliable, straightforward service.
       </p>
     </div>
 

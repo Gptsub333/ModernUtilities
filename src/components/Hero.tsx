@@ -16,22 +16,21 @@ export const Hero = () => {
           <br />
           <h2 className="inline">
             <span className="inline bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
-              Best
+              #1
             </span>{" "}
-            Services,
+            Ranked,
           </h2>
           <br />
           <h2 className="inline">
             <span className="inline bg-gradient-to-r from-[#61DAFB] via-[#1fc0f1] to-[#03a3d7] text-transparent bg-clip-text">
-              Affordable
+              Authorized
             </span>{" "}
-            Prices
+            Dealer
           </h2>
         </main>
 
         <p className="text-xl text-muted-foreground md:w-10/12 mx-auto lg:mx-0">
-          Experience top-notch utility services without breaking the bank. Your
-          one-stop shop for internet, mobile/landline service, and TV!
+        for all your high speed Internet / WIFI / Cable and Satellite TV service / Phone ( VOIP , Mobile , Landline ) & much more! <br/> One stop shop for all your technology needs. Disabled combat Army veteran owned and operated business based in Las Vegas. Now licensed in all 50 States !
         </p>
 
         <div className="space-y-4 md:space-y-0 md:space-x-4">
@@ -40,7 +39,7 @@ export const Hero = () => {
       </div>
 
       {/* Image replacing HeroCards */}
-      <div className="z-10 w-full h-full max-w-lg">
+      <div className="z-10 w-full h-full">
         <img
           src={pilot}
           alt="Hero Section Image"

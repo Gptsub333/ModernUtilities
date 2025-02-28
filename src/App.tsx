@@ -1,12 +1,12 @@
 import { About } from "./components/About";
 
-import { FAQ } from "./components/FAQ";
+// import { FAQ } from "./components/FAQ";
 import { Features } from "./components/Features";
 import { Footer } from "./components/Footer";
 import { Hero } from "./components/Hero";
 import { HowItWorks } from "./components/HowItWorks";
 import { Navbar } from "./components/Navbar";
-import { Newsletter } from "./components/Newsletter";
+// import { Newsletter } from "./components/Newsletter";
 // import { Services } from "./components/Services";
 
 // import { ScrollToTop } from "./components/ScrollToTop";
@@ -18,6 +18,7 @@ import { Testimonials } from "./components/Testimonials";
 import Contactus from "./components/Contactus"
 import "./App.css";
 import Chatbot from "./components/Chatbot";
+import { VideoGallery } from "./components/VideoGallery";
 
 function App() {
   return (
@@ -30,12 +31,13 @@ function App() {
       <Workflow />
       <HowItWorks />
       <Features />
+      <VideoGallery/>
       {/* <Cta /> */}
       <Testimonials />
       {/* <Team /> */}
       {/* <Pricing /> */}
-      <Newsletter />
-      <FAQ />
+      {/* <Newsletter /> */}
+      {/* <FAQ /> */}
       <Contactus/>
       <Footer />
       {/* <ScrollToTop /> */}

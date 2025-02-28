@@ -1,5 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "./ui/card";
-import { PlaneIcon, GiftIcon } from "../components/Icons";
+import { PlaneIcon } from "../components/Icons";
 
 interface FeatureProps {
   icon: JSX.Element;
@@ -24,14 +24,14 @@ const features: FeatureProps[] = [
     icon: <PlaneIcon />,
     title: "Smart Solutions",
     description:
-      "Empowering communities with cutting-edge technology and reliable utility services, Modern Utilities is committed to enhancing everyday life through seamless connectivity and smart innovations.",
+      "Modern Utilities empowers communities with advanced technology and dependable utility services. We enhance everyday life through seamless connectivity, smart innovations, and sustainable solutions. Our commitment ensures efficiency, reliability, and a brighter future for all.",
   },
-  {
-    icon: <GiftIcon />,
-    title: "Sustainable Practices",
-    description:
-      "At Modern Utilities, we are committed to eco-friendly solutions that not only enhance your daily life but also contribute to a greener future. By investing in renewable energy sources, we strive to create a cleaner, more sustainable world.",
-  },
+  // {
+  //   icon: <GiftIcon />,
+  //   title: "Sustainable Practices",
+  //   description:
+  //     "At Modern Utilities, we are committed to eco-friendly solutions that not only enhance your daily life but also contribute to a greener future. By investing in renewable energy sources, we strive to create a cleaner, more sustainable world.",
+  // },
 ];
 
 export const HowItWorks = () => {
@@ -51,11 +51,11 @@ export const HowItWorks = () => {
       At Modern Utilities, we specialize in innovative solutions that enhance your daily life. Our commitment to sustainability and efficiency sets us apart in the utility sector.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
+      <div className="w-full gap-8">
         {features.map(({ icon, title, description }: FeatureProps) => (
           <Card
             key={title}
-            className="bg-muted/50"
+            className="w-full bg-muted/50"
           >
             <CardHeader>
               <CardTitle className="grid gap-4 place-items-center">
