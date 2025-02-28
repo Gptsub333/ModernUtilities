@@ -34,11 +34,19 @@ const socket = io(B_url);
 const Chatbot: React.FC = () => {
    const [sessionId, setSessionId] = useState<string>(localStorage.getItem("sessionId") || "");
    const [customerId, setCustomerId] = useState<string>(localStorage.getItem("customerId") || "");
-   const [chat, setChat] = useState<ChatMessage[]>(
-       JSON.parse(localStorage.getItem("chat") || "[]") || [
-           { id: uuidv4(), sender: "bot", message: "Hello! This is Modern Utilities. Who do I have the pleasure of chatting with?" },
-       ]
-   );
+   // frontend.tsx (modify useState initialization)
+const [chat, setChat] = useState<ChatMessage[]>(() => {
+   // Fix greeting message logic
+   const storedChat = localStorage.getItem("chat");
+   if (!storedChat) {
+     return [{
+       id: uuidv4(),
+       sender: "bot",
+       message: "Hello! This is Modern Utilities. Who do I have the pleasure of chatting with?"
+     }];
+   }
+   return JSON.parse(storedChat);
+ });
    const [message, setMessage] = useState<string>("");
    const [isOpen, setIsOpen] = useState<boolean>(false);
    const [isSending, setIsSending] = useState<boolean>(false);
@@ -226,9 +234,9 @@ const Chatbot: React.FC = () => {
                                </motion.div>
                            ))}
                            {awaitingReply && (
-                               <div className="p-2 my-1 max-w-[75%] bg-gray-200 text-gray-700 mr-auto rounded-bl-lg rounded-tr-lg rounded-br-lg">
+                               <div className="p-2 my-1 max-w-[75%] bg-gray-700 text-white mr-auto rounded-bl-lg rounded-tr-lg rounded-br-lg">
                                    <div className="flex items-center justify-between">
-                                       <span>Waiting for response</span>
+                                       
                                        <div className="flex space-x-1">
                                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
@@ -283,4 +291,6 @@ const Chatbot: React.FC = () => {
 
 
 export default Chatbot;
+
+
 
