@@ -20,7 +20,7 @@ const formatYouTubeEmbedURL = (url: string) => {
 const videos: VideoProps[] = [
   {
     title: "Modern Utilities - Customer Testimonials",
-    url: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Example Video ID
+    url: "https://www.youtube.com/watch?v=DZLlw5BNQ3g&ab_channel=vibg", // Example Video ID
   },
   {
     title: "How to Get the Best Internet Deals",

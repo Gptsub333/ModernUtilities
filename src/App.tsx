@@ -18,7 +18,7 @@ import { Testimonials } from "./components/Testimonials";
 import Contactus from "./components/Contactus"
 import "./App.css";
 import Chatbot from "./components/Chatbot";
-import { VideoGallery } from "./components/VideoGallery";
+// import { VideoGallery } from "./components/VideoGallery";
 
 function App() {
   return (
@@ -31,7 +31,7 @@ function App() {
       <Workflow />
       <HowItWorks />
       <Features />
-      <VideoGallery/>
+      {/* <VideoGallery/> */}
       {/* <Cta /> */}
       <Testimonials />
       {/* <Team /> */}
