@@ -3,7 +3,6 @@ import io from "socket.io-client";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { MessageCircle, X, Send, Trash2 } from "lucide-react";
-// import notificationSound from "../assets/notification.mp3"; // Ensure this file exists
 
 
 // Define types for chat messages
@@ -14,6 +13,7 @@ interface ChatMessage {
    status?: "sent" | "delivered" | "read";
    customerId?: string;
    timestamp?: Date;
+   isTemplate?: boolean;
 }
 
 
@@ -22,37 +22,34 @@ const socket = io(B_url);
 
 
 // Generate a unique ID for messages
-   const uuidv4 = () => {
-       return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-           const r = (Math.random() * 16) | 0,
-               v = c === "x" ? r : (r & 0x3) | 0x8;
-           return v.toString(16);
-       });
-   };
+const uuidv4 = () => {
+   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+       const r = (Math.random() * 16) | 0,
+           v = c === "x" ? r : (r & 0x3) | 0x8;
+       return v.toString(16);
+   });
+};
 
 
 const Chatbot: React.FC = () => {
    const [sessionId, setSessionId] = useState<string>(localStorage.getItem("sessionId") || "");
    const [customerId, setCustomerId] = useState<string>(localStorage.getItem("customerId") || "");
-   // frontend.tsx (modify useState initialization)
-const [chat, setChat] = useState<ChatMessage[]>(() => {
-   // Fix greeting message logic
-   const storedChat = localStorage.getItem("chat");
-   if (!storedChat) {
-     return [{
-       id: uuidv4(),
-       sender: "bot",
-       message: "Hello! This is Modern Utilities. Who do I have the pleasure of chatting with?"
-     }];
-   }
-   return JSON.parse(storedChat);
- });
+   const [chat, setChat] = useState<ChatMessage[]>(() => {
+       const storedChat = localStorage.getItem("chat");
+       if (!storedChat) {
+           return [{
+               id: uuidv4(),
+               sender: "bot",
+               message: "Hello! This is Modern Utilities. Who do I have the pleasure of chatting with?"
+           }];
+       }
+       return JSON.parse(storedChat);
+   });
    const [message, setMessage] = useState<string>("");
    const [isOpen, setIsOpen] = useState<boolean>(false);
    const [isSending, setIsSending] = useState<boolean>(false);
    const [awaitingReply, setAwaitingReply] = useState<boolean>(false);
    const chatEndRef = useRef<HTMLDivElement | null>(null);
-   // const audioRef = useRef(new Audio(notificationSound));
 
 
    // Initialize session and socket connection
@@ -72,21 +69,26 @@ const [chat, setChat] = useState<ChatMessage[]>(() => {
            socket.emit("join", sessionId);
 
 
-           const handleReply = (data: ChatMessage) => {
-               if (!chat.some((msg) => msg.id === data.id)) {
-                   setChat((prev) => [...prev, { ...data, sender: "owner" }]);
-                   setAwaitingReply(false);
-                   // playSound();
-                   console.log(`[FRONTEND] Received reply: ${data.message}`);
-               }
+           const handleUpdate = (newMessages: ChatMessage[]) => {
+               console.log("[FRONTEND] Received update:", newMessages);
+               setChat((prev) => {
+                   const merged = [...prev];
+                   newMessages.forEach((newMsg) => {
+                       if (newMsg.message?.trim() && !merged.some((m) => m.id === newMsg.id)) {
+                           merged.push(newMsg);
+                       }
+                   });
+                   return merged;
+               });
+               setAwaitingReply(false);
            };
 
 
-           socket.on(`reply-${sessionId}`, handleReply);
+           socket.on(`update-${sessionId}`, handleUpdate);
 
 
            return () => {
-               socket.off(`reply-${sessionId}`, handleReply);
+               socket.off(`update-${sessionId}`, handleUpdate);
            };
        }
    }, [sessionId]);
@@ -103,19 +105,14 @@ const [chat, setChat] = useState<ChatMessage[]>(() => {
    useEffect(() => {
        setTimeout(() => {
            setIsOpen(true);
-       }, 1000); // 1-second delay before opening
+       }, 1000);
    }, []);
-
-
-   // Play notification sound
-   // const playSound = () => {
-   //     audioRef.current.play();
-   // };
 
 
    // Send message to backend
    const handleSend = async (): Promise<void> => {
-       if (!message.trim() || isSending) return;
+       const trimmedMessage = message.trim();
+       if (!trimmedMessage || isSending) return;
 
 
        setIsSending(true);
@@ -126,10 +123,11 @@ const [chat, setChat] = useState<ChatMessage[]>(() => {
            const newMessage: ChatMessage = {
                id: messageId,
                sender: "user",
-               message,
+               message: trimmedMessage,
                status: "sent",
                customerId,
                timestamp: new Date(),
+               isTemplate: true
            };
 
 
@@ -140,15 +138,14 @@ const [chat, setChat] = useState<ChatMessage[]>(() => {
 
            await axios.post(`${B_url}/send-message`, {
                sessionId,
-               message,
+               message: trimmedMessage,
                customerId,
            });
 
 
-           console.log(`[FRONTEND] Message sent: ${message}`);
-           // playSound();
+           console.log(`[FRONTEND] Template message sent: ${trimmedMessage}`);
        } catch (error) {
-           console.error("[FRONTEND] Error sending message:", error);
+           console.error("[FRONTEND] Error sending template message:", error);
        } finally {
            setIsSending(false);
        }
@@ -184,7 +181,6 @@ const [chat, setChat] = useState<ChatMessage[]>(() => {
    return (
        <section id="chatbot">
            <div className="fixed bottom-4 right-4 sm:right-10 md:right-10 flex flex-col items-end z-50">
-               {/* Floating button to open chat */}
                {!isOpen && (
                    <motion.button
                        onClick={() => setIsOpen(true)}
@@ -198,7 +194,6 @@ const [chat, setChat] = useState<ChatMessage[]>(() => {
                )}
 
 
-               {/* Chat window with bounce effect */}
                {isOpen && (
                    <motion.div
                        initial={{ opacity: 0, scale: 0.8, y: 20 }}
@@ -206,7 +201,6 @@ const [chat, setChat] = useState<ChatMessage[]>(() => {
                        transition={{ duration: 0.5, ease: "easeOut", type: "spring", stiffness: 120 }}
                        className="flex flex-col w-72 sm:w-80 max-w-full h-80 sm:h-96 bg-gray-900 dark:bg-gray-900 border border-gray-700 rounded-lg shadow-lg overflow-hidden"
                    >
-                       {/* Header */}
                        <div className="flex items-center justify-between bg-gradient-to-r from-green-500 to-green-600 text-white px-3 sm:px-4 py-2">
                            <h2 className="font-bold text-sm sm:text-lg">Chat Support</h2>
                            <button onClick={() => setIsOpen(false)} className="text-white focus:outline-none hover:scale-110 transition-transform">
@@ -215,7 +209,6 @@ const [chat, setChat] = useState<ChatMessage[]>(() => {
                        </div>
 
 
-                       {/* Messages area */}
                        <div className="flex-1 flex flex-col space-y-2 p-2 sm:p-3 overflow-y-auto">
                            {chat.map((msg) => (
                                <motion.div
@@ -226,17 +219,12 @@ const [chat, setChat] = useState<ChatMessage[]>(() => {
                                    className={`px-2 sm:px-3 py-1 sm:py-2 max-w-[85%] rounded-md text-xs sm:text-sm break-words ${getMessageClasses(msg.sender)}`}
                                >
                                    {msg.message}
-                                   {/* {msg.sender === "user" && (
-                                       <div className="text-xs text-gray-200 mt-1">
-                                           Status: {msg.status || "sent"}
-                                       </div>
-                                   )} */}
                                </motion.div>
                            ))}
                            {awaitingReply && (
-                               <div className="p-2 my-1 max-w-[75%] bg-gray-700 text-white mr-auto rounded-bl-lg rounded-tr-lg rounded-br-lg">
+                               <div className="p-2 my-1 max-w-[75%] bg-gray-200 text-gray-700 mr-auto rounded-bl-lg rounded-tr-lg rounded-br-lg">
                                    <div className="flex items-center justify-between">
-                                       
+                                       <span>Waiting for response</span>
                                        <div className="flex space-x-1">
                                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
@@ -249,7 +237,6 @@ const [chat, setChat] = useState<ChatMessage[]>(() => {
                        </div>
 
 
-                       {/* Input and Clear Chat Row */}
                        <div className="border-t border-gray-700 bg-gray-900 p-2 flex items-center space-x-1 sm:space-x-2">
                            <input
                                value={message}
@@ -291,6 +278,4 @@ const [chat, setChat] = useState<ChatMessage[]>(() => {
 
 
 export default Chatbot;
-
-
 

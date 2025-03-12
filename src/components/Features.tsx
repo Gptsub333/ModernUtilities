@@ -145,6 +145,7 @@ export const Features = () => {
 };
 
 // Modal Component
+
 const FeatureModal = ({
   feature,
   onClose,
@@ -153,44 +154,64 @@ const FeatureModal = ({
   onClose: () => void;
 }) => {
   return (
-    <div className="fixed inset-[-50px] flex items-center justify-center z-50">
-      {/* Background Overlay (Disables Interaction Outside Modal) */}
-      <div className="absolute inset-0 bg-black bg-opacity-50 pointer-events-auto"></div>
+    <div className="fixed inset-0 flex items-center justify-center z-50 px-4 sm:px-6 md:px-8">
+      {/* Background Overlay */}
+      <div className="absolute inset-0 bg-black bg-opacity-50" onClick={onClose}></div>
 
       {/* The Modal */}
-      <div className="relative bg-white dark:bg-[hsl(24,9.8%,10%)] p-6 rounded-lg shadow-lg max-w-lg w-full z-50">
+      <div className="relative bg-white dark:bg-[hsl(24,9.8%,10%)] rounded-lg shadow-lg max-w-xl md:max-w-lg sm:max-w-sm w-full p-6 sm:p-4 md:p-6 lg:p-8 z-50">
         {/* Close Button */}
         <button
-          className="absolute top-4 right-4 text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100"
+          className="absolute top-3 right-3 sm:top-2 sm:right-2 text-gray-500 dark:text-gray-300 hover:text-gray-700 dark:hover:text-gray-100"
           onClick={onClose}
         >
           <X size={24} />
         </button>
 
+        {/* Modal Content */}
         <div className="flex flex-col items-center text-center">
-          <div className="w-16 h-16 bg-green-100  rounded-full flex items-center justify-center mb-4 text-black">
+          {/* Icon */}
+          <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mb-4 text-black">
             {feature.icon}
           </div>
-          <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+
+          {/* Title */}
+          <h3 className="text-2xl font-bold text-gray-900 dark:text-white sm:text-xl md:text-2xl">
             {feature.title}
           </h3>
-          <p className="text-gray-600 dark:text-gray-300 mt-2">{feature.description}</p>
-          <p className="text-gray-800 dark:text-gray-400 mt-4">
-            {Object.entries(feature.details).map(([key, value], index) => (
-              <div key={index} className="mb-2">
-                <strong className="text-gray-900 dark:text-gray-100">{key}:</strong>
-                <span className="ml-2">{value}</span>
-              </div>
-            ))}
+
+          {/* Description */}
+          <p className="text-gray-600 dark:text-gray-300 mt-2 sm:text-sm md:text-base">
+            {feature.description}
           </p>
 
-          <p className="text-lg font-semibold mt-4 text-primary dark:text-yellow-400">
+          {/* Feature Details */}
+          <div className="mt-4 w-full text-left text-sm md:text-base">
+  {Object.entries(feature.details).map(([key, value], index) => (
+    <div
+      key={index}
+      className="flex items-start justify-between border-b border-gray-300 dark:border-gray-700 py-2 gap-4"
+    >
+      <strong className="text-gray-900 dark:text-gray-100 w-1/3 md:w-1/4 text-left">
+        {key}:
+      </strong>
+      <span className="text-gray-600 dark:text-gray-300 w-2/3 md:w-3/4 text-right">
+        {value}
+      </span>
+    </div>
+  ))}
+</div>
+
+
+          {/* Price */}
+          <p className="text-lg font-semibold mt-4 text-primary dark:text-yellow-400 sm:text-base md:text-lg">
             {feature.price}
           </p>
         </div>
       </div>
     </div>
-
-
   );
 };
+
+
+
