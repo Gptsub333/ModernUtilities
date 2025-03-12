@@ -222,9 +222,9 @@ const Chatbot: React.FC = () => {
                                </motion.div>
                            ))}
                            {awaitingReply && (
-                               <div className="p-2 my-1 max-w-[75%] bg-gray-200 text-gray-700 mr-auto rounded-bl-lg rounded-tr-lg rounded-br-lg">
+                               <div className="p-2 my-1 max-w-[75%] bg-gray-700 text-white mr-auto rounded-bl-lg rounded-tr-lg rounded-br-lg">
                                    <div className="flex items-center justify-between">
-                                       <span>Waiting for response</span>
+                                       
                                        <div className="flex space-x-1">
                                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce"></div>
                                            <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" style={{ animationDelay: "0.2s" }}></div>
