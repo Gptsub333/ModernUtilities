@@ -187,20 +187,20 @@ const FeatureModal = ({
 
           {/* Feature Details */}
           <div className="mt-4 w-full text-left text-sm md:text-base">
-  {Object.entries(feature.details).map(([key, value], index) => (
-    <div
-      key={index}
-      className="flex items-start justify-between border-b border-gray-300 dark:border-gray-700 py-2 gap-4"
-    >
-      <strong className="text-gray-900 dark:text-gray-100 w-1/3 md:w-1/4 text-left">
-        {key}:
-      </strong>
-      <span className="text-gray-600 dark:text-gray-300 w-2/3 md:w-3/4 text-right">
-        {value}
-      </span>
-    </div>
-  ))}
-</div>
+            {Object.entries(feature.details).map(([key, value], index) => (
+              <div
+                key={index}
+                className="flex items-start justify-between border-b border-gray-300 dark:border-gray-700 py-2 gap-4"
+              >
+                <strong className="text-gray-900 dark:text-gray-100 w-1/3 md:w-1/4 text-left">
+                  {key}:
+                </strong>
+                <span className="text-gray-600 dark:text-gray-300 w-2/3 md:w-3/4 text-right">
+                  {value}
+                </span>
+              </div>
+            ))}
+          </div>
 
 
           {/* Price */}
