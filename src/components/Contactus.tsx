@@ -19,26 +19,34 @@ export default function Contactus() {
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   }
-  
+
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setIsLoading(true);
-  
+
+
+    const trimmedFormData = {
+      name: formData.name.trim(),
+      email: formData.email.trim(),
+      subject: formData.subject.trim(),
+      message: formData.message.trim(),
+    };
+
     const serviceId = import.meta.env.VITE_SERVICE_ID || '';
     const templateId = import.meta.env.VITE_TEMPLATE_ID || '';
     const publicKey = import.meta.env.VITE_PUBLIC_KEY || '';
 
 
-    
-  
+
+
     const templateParams = {
-      message: formData.message,
-      from_name: formData.name,
-      subject: formData.subject,
-      reply_to: formData.email,
+      message: trimmedFormData.message,
+      from_name: trimmedFormData.name,
+      subject: trimmedFormData.subject,
+      reply_to: trimmedFormData.email,
     };
-  
+
     try {
       await emailjs.send(serviceId, templateId, templateParams, publicKey);
       toast.success("Message sent successfully!", { position: "top-right" });
@@ -47,10 +55,10 @@ export default function Contactus() {
       console.error("Error sending email:", error);
       toast.error("Failed to send message. Please try again.");
     }
-  
+
     setIsLoading(false);
   }
-  
+
   return (
     <section id="contactus" className="container py-24 sm:py-32 space-y-8">
       <Toaster position="top-right" richColors />
