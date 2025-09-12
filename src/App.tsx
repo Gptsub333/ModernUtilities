@@ -1,5 +1,4 @@
 import { About } from "./components/About";
-
 // import { FAQ } from "./components/FAQ";
 import { Features } from "./components/Features";
 import { Footer } from "./components/Footer";
@@ -8,22 +7,21 @@ import { HowItWorks } from "./components/HowItWorks";
 import { Navbar } from "./components/Navbar";
 // import { Newsletter } from "./components/Newsletter";
 // import { Services } from "./components/Services";
-
 // import { ScrollToTop } from "./components/ScrollToTop";
-
 // import { Sponsors } from "./components/Sponsors";
 import { Workflow } from "./components/Workflow";
-
 import { Testimonials } from "./components/Testimonials";
-import Contactus from "./components/Contactus"
+import Contactus from "./components/Contactus";
 import "./App.css";
-import Chatbot from "./components/Chatbot";
+// import Chatbot from "./components/Chatbot"; // Remove Chatbot import
+import PhonePopup from "./components/PhonePopup"; // Add PhonePopup import
 // import { VideoGallery } from "./components/VideoGallery";
 
 function App() {
   return (
     <>
-      <Chatbot/>
+      {/* <Chatbot />  */}
+      <PhonePopup /> {/* Add PhonePopup component here */}
       <Navbar />
       <Hero />
       {/* <Sponsors /> */}
@@ -38,7 +36,7 @@ function App() {
       {/* <Pricing /> */}
       {/* <Newsletter /> */}
       {/* <FAQ /> */}
-      <Contactus/>
+      <Contactus />
       <Footer />
       {/* <ScrollToTop /> */}
     </>
